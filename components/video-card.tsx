@@ -9,6 +9,9 @@ import React from "react";
 import Thumbnail from "./thumbnail";
 
 const VideoCard = ({ item }: any) => {
+    if (!item || !item.type) {
+       return null; // or render a placeholder/fallback UI
+    }
     if (item.type === "folder") {
         return (
             <Card className="border-0 rounded-none md:border-[1px] md:rounded-md transform transition duration-200 md:hover:scale-[101%] md:hover:shadow-lg">
